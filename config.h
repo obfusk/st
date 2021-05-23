@@ -9,6 +9,7 @@ static char *font = "DejaVu Sans Mono:size=11:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
 	"Noto Sans CJK JP:size=11:antialias=true:autohint=true",
+	"Unifont Upper:size=11:antialias=true:autohint=true",
 };
 
 static int borderpx = 2;
