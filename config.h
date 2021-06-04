@@ -181,30 +181,37 @@ static uint forcemousemod = ShiftMask;
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
-	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
-	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
-	{ ShiftMask,            Button5, ttysend,        {.s = "\033[6;2~"} },
-	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"} },
+//	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
+//	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
+//	{ ShiftMask,            Button5, ttysend,        {.s = "\033[6;2~"} },
+//	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"} },
 };
 
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
-#define TERMMOD (ControlMask|ShiftMask)
+#define TERMMOD1 (ControlMask|ShiftMask)
+#define TERMMOD2 (ControlMask|Mod1Mask)
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
-	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
-	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
-	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
-	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+//	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
+//	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
+//	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
+//	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
+	{ TERMMOD1,             XK_Prior,       zoom,           {.f = +1} },
+	{ TERMMOD1,             XK_Next,        zoom,           {.f = -1} },
+	{ TERMMOD1,             XK_Home,        zoomreset,      {.f =  0} },
+	{ TERMMOD1,             XK_C,           clipcopy,       {.i =  0} },
+	{ TERMMOD1,             XK_V,           clippaste,      {.i =  0} },
+	{ TERMMOD1,             XK_B,           selpaste,       {.i =  0} },
+	{ TERMMOD2,             XK_Prior,       zoom,           {.f = +1} },
+	{ TERMMOD2,             XK_Next,        zoom,           {.f = -1} },
+	{ TERMMOD2,             XK_Home,        zoomreset,      {.f =  0} },
+	{ TERMMOD2,             XK_c,           clipcopy,       {.i =  0} },
+	{ TERMMOD2,             XK_v,           clippaste,      {.i =  0} },
+	{ TERMMOD2,             XK_b,           selpaste,       {.i =  0} },
+//	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
+//	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 };
 
 /*
